@@ -1,0 +1,22 @@
+{
+  "name": "Waffles",
+  "version": "1.0.0",
+  "description": "Waffles Made A Bot",
+  "main": "index.js",
+  "author": "Lauren",
+  "dependencies": {
+    "discord-leveling": "^1.0.3",
+    "discord.js": "^11.5.1",
+    "discord.js-commando": "^0.10.0",
+    "discordenvo": "^1.1.1",
+    "mongoose": "^5.6.0",
+    "ms": "^2.1.2",
+    "node-superfetch": "^0.1.9",
+    "sequelize": "^5.9.4",
+    "sqlite3": "^4.0.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
