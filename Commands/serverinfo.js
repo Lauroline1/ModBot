@@ -1,6 +1,10 @@
 const Discord = module.require("discord.js");
 
 module.exports.run = async (bot, message, args) =>{
+
+  if (!message.member.roles.some(r => ["HUMAN"].includes(r.name)))
+  return message.reply("Sorry, you don't have permissions to use this!");
+
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("Server Information")

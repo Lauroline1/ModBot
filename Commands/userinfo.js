@@ -1,6 +1,10 @@
 const Discord = module.require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
+  
+  if (!message.member.roles.some(r => ["HUMAN"].includes(r.name)))
+      return message.reply("Sorry, you don't have permissions to use this!");
+  
   let memberInfo = message.mentions.members.first();
 
   if(!memberInfo){
@@ -14,19 +18,6 @@ module.exports.run = async (bot, message, args) => {
         .addField("Created At:", message.author.createdAt)
 
         message.channel.send(userinf);
-
-  }else{
-
-    var userinfoo = new Discord.RichEmbed()
-        .setAuthor(memberInfo.displayName)
-        .setThumbnail(memberInfo.user.avatarURL)
-        .setDescription("This is the user's info!")
-        .setColor(0x00FF00)
-        .addField("Full Username:", `${memberInfo.user.username}#${memberInfo.user.discriminator}`)
-        .addField("ID:", memberInfo.id)
-        .addField("Created At:", memberInfo.user.createdAt)
-
-        message.channel.send(userinfoo);
   }
   message.delete();
 }
